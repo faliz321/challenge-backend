@@ -1,29 +1,56 @@
 <p align="center">
-  <a href="https://www.netlolo.com">
+  <a href="https://www.netlolo.com" target="_blank">
       <img src="https://app.netlolo.com/images/logo_vertical.png" alt="Netlolo"/>
   </a>
 </p>
 
-## Challenge for Backend Developer
+## Installing
+* ```npm install```
 
-A customer needs to search in our orderbook (available in this <a href="https://github.com/NetloloIncubadora/challenge/blob/master/orderbook.json">JSON</a>) and he wants to buy offers below some price also sell offer offer to recieve some money.
-Based on this you will need to develop:
+## Running Application
+* ```npm start```
 
-- a simple API to search offers in the .json available;
-- it should be possible to search for offer by their amount (one or more);
-- it must be possible to order the result by price (asc and desc);
+## Running Unit Tests
+* ```npm test```
 
-The test should be done in Node(ECMAScript6). We expect at the end of the test, outside the API running, the following items:
+## Search Offers
+List results from offers, based on one or more specific quantity in the desired order (asc or desc).
 
-- an explanation of what is needed to make your project work;
-- an explanation of how to perform the tests;
+* **URL Description**
+/offer/:quantity/:sort?
 
-Remember that at the time of the evaluation we will look at:
+*  **Parameters**
 
-- Code organization;
-- Object-Oriented Principles;
-- Maintenance;
+   **Required:**
+ 
+   `quantity=[float]`
 
-To send us your code, you must:
+   **Optional:**
 
-Make a fork of this repository, and send us a pull-request.
+   `sort=[string]`
+
+   * **Examples:**
+
+  ```javascript
+    $.ajax({
+      url: "/offer/15000,30000/asc",
+      dataType: "json",
+      type : "GET",
+      success : function(r) {
+        console.log(r);
+      }
+    });
+  ```
+  http://localhost:3000/offer/15000,30000/asc
+  
+  ```javascript
+    $.ajax({
+      url: "/offer/53000/desc",
+      dataType: "json",
+      type : "GET",
+      success : function(r) {
+        console.log(r);
+      }
+    });
+  ```
+  http://localhost:3000/offer/53000/desc
