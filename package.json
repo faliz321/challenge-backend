@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha"
   },
-  "author": "Henrique Carvalho da Cruz",
+  "author": "Hugo Cesar Alonso Generoso",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2"
